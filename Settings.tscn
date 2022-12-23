@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SettingsControl.gd" type="Script" id=1]
+[ext_resource path="res://Back Ground.tscn" type="PackedScene" id=2]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = -2.0
+margin_right = -203.0
+margin_bottom = -124.0
+rect_scale = Vector2( 1.25, 1.25 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "	$ColorPickerButton.size = Vector2(100, 100)"
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.052
+anchor_top = 0.084
+anchor_right = 0.058
+anchor_bottom = 0.099
+margin_left = 22.1
+margin_top = 24.848
+margin_right = 117.15
+margin_bottom = 53.678
+toggle_mode = true
+text = "Back Ground"
+expand_icon = true
+
+[node name="Back_Ground" parent="." instance=ExtResource( 2 )]
+visible = false
+scale = Vector2( 0.8, 0.81 )
+
+[node name="Button2" type="Button" parent="."]
+anchor_top = 0.799
+anchor_right = 0.805
+anchor_bottom = 0.802
+margin_left = 12.0
+margin_top = 45.078
+margin_right = 145.875
+margin_bottom = 90.644
+text = "Back"
+
+[connection signal="toggled" from="Button" to="." method="_on_BG_toggled"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_back"]

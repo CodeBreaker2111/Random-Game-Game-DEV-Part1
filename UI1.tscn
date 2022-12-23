@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI1.gd" type="Script" id=1]
+[ext_resource path="res://Back Ground.tscn" type="PackedScene" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Level_1" type="Button" parent="."]
+anchor_left = 0.052
+anchor_top = 0.084
+anchor_right = 0.058
+anchor_bottom = 0.099
+margin_left = 11.752
+margin_top = 14.6
+margin_right = 105.608
+margin_bottom = 105.6
+focus_mode = 1
+enabled_focus_mode = 1
+text = "Level 1"
+expand_icon = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Options" type="Button" parent="."]
+anchor_top = 0.992
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0
+margin_top = -60.2
+margin_right = -11.0
+margin_bottom = -5.0
+text = "Settings"
+
+[node name="Back_Ground" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="pressed" from="Level_1" to="." method="_on_Level_1_pressed"]
+[connection signal="pressed" from="Options" to="." method="_settings_pressed"]
